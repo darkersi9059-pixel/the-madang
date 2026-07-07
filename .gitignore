@@ -60,3 +60,8 @@ Thumbs.db
 
 # OMC 오케스트레이션 상태
 .omc/
+
+# WebGL 배포 빌드는 커밋해야 함 (GitHub Pages 소스). 위 [Bb]uild/ 규칙이
+# docs/Build/까지 무시하므로 여기서 예외 처리.
+!/docs/Build/
+!/docs/Build/**
