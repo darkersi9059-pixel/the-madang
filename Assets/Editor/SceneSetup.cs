@@ -590,8 +590,8 @@ public class SceneSetup : EditorWindow
     [MenuItem("TheMadang/Create Custom Cat")]
     public static void CreateCustomCat()
     {
-        // 손그림 고양이 '동백'만 다시 생성(그림 교체 후 반영용). PPU 4600 = 2048px/4600 ≈ 0.45유닛.
-        if (CreateCustomAnimalCore("동백", "mycat", AnimalType.Cat, "MyCat", 4600f, 1f,
+        // 손그림 고양이 '동백'만 다시 생성(그림 교체 후 반영용). PPU 1150 = 512px/1150 ≈ 0.45유닛(웹배포용 축소, 2048→512와 4600→1150 동시 적용해 월드크기 동일 유지).
+        if (CreateCustomAnimalCore("동백", "mycat", AnimalType.Cat, "MyCat", 1150f, 1f,
             ZoneMask.Yard | ZoneMask.Porch | ZoneMask.Grass))
         {
             AssetDatabase.SaveAssets();
@@ -655,7 +655,7 @@ public class SceneSetup : EditorWindow
         var missing = new System.Collections.Generic.List<string>();
         foreach (var a in list)
         {
-            if (CreateCustomAnimalCore(a.name, a.key, a.type, a.prefab, 4600f, a.size, a.zones)) ok++;
+            if (CreateCustomAnimalCore(a.name, a.key, a.type, a.prefab, 1150f, a.size, a.zones)) ok++;
             else missing.Add($"{a.name}({a.key}_body.png)");
         }
 
