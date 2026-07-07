@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 18bd0c0b65cd0df4b857c6fe63625250
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2653735143052100275
+    second: mycat_body_backup_0
+  - first:
+      213: 2651110350082691806
+    second: mycat_body_backup_1
+  - first:
+      213: -7946494035933567069
+    second: mycat_body_backup_2
+  - first:
+      213: -4448696200181916378
+    second: mycat_body_backup_3
+  - first:
+      213: -9158557893804343681
+    second: mycat_body_backup_4
+  - first:
+      213: -7700421341158317121
+    second: mycat_body_backup_5
+  - first:
+      213: 3264749583003334086
+    second: mycat_body_backup_6
+  - first:
+      213: -5627112187889652554
+    second: mycat_body_backup_7
+  - first:
+      213: -7447898573435014267
+    second: mycat_body_backup_8
+  - first:
+      213: -4473086870271014481
+    second: mycat_body_backup_9
+  - first:
+      213: -6540746376499817958
+    second: mycat_body_backup_10
+  - first:
+      213: -322401416979998995
+    second: mycat_body_backup_11
+  - first:
+      213: 8843175697841343639
+    second: mycat_body_backup_12
+  - first:
+      213: 1619417587387402698
+    second: mycat_body_backup_13
+  - first:
+      213: 4718839243472126734
+    second: mycat_body_backup_14
+  - first:
+      213: -8427494842596945648
+    second: mycat_body_backup_15
+  - first:
+      213: 2281759829216039340
+    second: mycat_body_backup_16
+  - first:
+      213: 1323228675706553424
+    second: mycat_body_backup_17
+  - first:
+      213: -1417472285183969038
+    second: mycat_body_backup_18
+  - first:
+      213: 3866114394427277890
+    second: mycat_body_backup_19
+  - first:
+      213: -5626704976233428959
+    second: mycat_body_backup_20
+  - first:
+      213: -5581090651778735491
+    second: mycat_body_backup_21
+  - first:
+      213: 6621382751337566951
+    second: mycat_body_backup_22
+  - first:
+      213: -2256987000288527687
+    second: mycat_body_backup_23
+  - first:
+      213: -6011803192462468272
+    second: mycat_body_backup_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mycat_body_backup_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 653
+        width: 2045
+        height: 1385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b247917d06f3d420800000000000000
+      internalID: 2653735143052100275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_1
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 1431
+        width: 245
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed25a0531d2aac420800000000000000
+      internalID: 2651110350082691806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_2
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1556
+        width: 329
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a76b62d6c168b190800000000000000
+      internalID: -7946494035933567069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_3
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 382
+        width: 334
+        height: 1029
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62dd68a406e0342c0800000000000000
+      internalID: -4448696200181916378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_4
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 1396
+        width: 82
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e31f4ae1446e080800000000000000
+      internalID: -9158557893804343681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_5
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 1332
+        width: 88
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3eb6bb69b922590800000000000000
+      internalID: -7700421341158317121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_6
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 1098
+        width: 94
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c5b487c278be4d20800000000000000
+      internalID: 3264749583003334086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_7
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1211
+        width: 78
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bce091674b78e1b0800000000000000
+      internalID: -5627112187889652554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_8
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1229
+        width: 76
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583744745bfb3a890800000000000000
+      internalID: -7447898573435014267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_9
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1024
+        width: 137
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa94800e0376ce1c0800000000000000
+      internalID: -4473086870271014481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_10
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 0
+        width: 836
+        height: 1190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a121ece23d99a35a0800000000000000
+      internalID: -6540746376499817958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_11
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 1009
+        width: 207
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de613d19e99968bf0800000000000000
+      internalID: -322401416979998995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_12
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 755
+        width: 179
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c433ca17549ba70800000000000000
+      internalID: 8843175697841343639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_13
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 204
+        width: 307
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac90f3737b3597610800000000000000
+      internalID: 1619417587387402698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_14
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 80
+        width: 255
+        height: 554
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e03445b5a4fac7140800000000000000
+      internalID: 4718839243472126734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_15
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 371
+        width: 240
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011929867168b0b80800000000000000
+      internalID: -8427494842596945648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_16
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 613
+        width: 32
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca19d23b9707aaf10800000000000000
+      internalID: 2281759829216039340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_17
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 516
+        width: 60
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0548914487d0d5210800000000000000
+      internalID: 1323228675706553424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_18
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 406
+        width: 59
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8f5aa7770245ce0800000000000000
+      internalID: -1417472285183969038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_19
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 430
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242ccd4ee8237a530800000000000000
+      internalID: 3866114394427277890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1280fabb2ade9e1b0800000000000000
+      internalID: -5626704976233428959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_21
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 40
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d72a9714f9bfb82b0800000000000000
+      internalID: -5581090651778735491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_22
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 40
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e2df5fd780e3eb50800000000000000
+      internalID: 6621382751337566951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_23
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 40
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bab02108429da0e0800000000000000
+      internalID: -2256987000288527687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mycat_body_backup_24
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 40
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b17bd29d8c19ca0800000000000000
+      internalID: -6011803192462468272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      mycat_body_backup_0: 2653735143052100275
+      mycat_body_backup_1: 2651110350082691806
+      mycat_body_backup_10: -6540746376499817958
+      mycat_body_backup_11: -322401416979998995
+      mycat_body_backup_12: 8843175697841343639
+      mycat_body_backup_13: 1619417587387402698
+      mycat_body_backup_14: 4718839243472126734
+      mycat_body_backup_15: -8427494842596945648
+      mycat_body_backup_16: 2281759829216039340
+      mycat_body_backup_17: 1323228675706553424
+      mycat_body_backup_18: -1417472285183969038
+      mycat_body_backup_19: 3866114394427277890
+      mycat_body_backup_2: -7946494035933567069
+      mycat_body_backup_20: -5626704976233428959
+      mycat_body_backup_21: -5581090651778735491
+      mycat_body_backup_22: 6621382751337566951
+      mycat_body_backup_23: -2256987000288527687
+      mycat_body_backup_24: -6011803192462468272
+      mycat_body_backup_3: -4448696200181916378
+      mycat_body_backup_4: -9158557893804343681
+      mycat_body_backup_5: -7700421341158317121
+      mycat_body_backup_6: 3264749583003334086
+      mycat_body_backup_7: -5627112187889652554
+      mycat_body_backup_8: -7447898573435014267
+      mycat_body_backup_9: -4473086870271014481
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
