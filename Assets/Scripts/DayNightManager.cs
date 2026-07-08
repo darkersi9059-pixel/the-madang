@@ -37,18 +37,50 @@ public class DayNightManager : MonoBehaviour
         if (GetComponent<NightAmbience>() == null) gameObject.AddComponent<NightAmbience>();
         // BGM·효과음 매니저 부팅(자동 생성, 게임 시작과 동시에 BGM 재생)
         _ = SoundManager.Instance;
+        // 이스터에그: 해/달 아이콘을 3번 연속 클릭하면 밤낮 전환 (모바일에서도 동작)
+        SetupIconEasterEgg();
+    }
+
+    // 해/달 아이콘 클릭 이스터에그 배선 (런타임, Setup 불필요)
+    int iconClicks;
+    float lastIconClick;
+    void SetupIconEasterEgg()
+    {
+        if (phaseIcon == null) return;
+        phaseIcon.raycastTarget = true;
+        var btn = phaseIcon.GetComponent<Button>();
+        if (btn == null) btn = phaseIcon.gameObject.AddComponent<Button>();
+        btn.transition = Selectable.Transition.None;
+        btn.onClick.AddListener(OnIconClicked);
+    }
+
+    void OnIconClicked()
+    {
+        float now = Time.unscaledTime;
+        if (now - lastIconClick > 1.5f) iconClicks = 0; // 너무 느리면 카운트 초기화
+        lastIconClick = now;
+        iconClicks++;
+        UITween.Instance?.Punch(phaseIcon.transform); // 클릭 손맛
+        if (iconClicks >= 3)
+        {
+            iconClicks = 0;
+            ToggleDayNight();
+        }
+    }
+
+    // 밤낮 강제 전환 (N키 / 아이콘 이스터에그 공용). SoundManager가 전환 종소리 자동 재생.
+    void ToggleDayNight()
+    {
+        debugOverride = true;
+        debugNight = !debugNight;
+        UpdatePhaseIcon();
     }
 
     void Update()
     {
         // 테스트용: N 키로 밤낮 강제 전환
         var kb = UnityEngine.InputSystem.Keyboard.current;
-        if (kb != null && kb.nKey.wasPressedThisFrame)
-        {
-            debugOverride = true;
-            debugNight = !debugNight;
-            UpdatePhaseIcon();
-        }
+        if (kb != null && kb.nKey.wasPressedThisFrame) ToggleDayNight();
 
         if (overlay != null)
         {

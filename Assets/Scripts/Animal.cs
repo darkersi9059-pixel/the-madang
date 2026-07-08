@@ -202,6 +202,15 @@ public class Animal : MonoBehaviour
         if (before < 100 && affinity >= 100) Graduate(); // 방금 친밀도 MAX 달성
     }
 
+    // 사진을 찍으면 친밀도 +amount. MAX 도달 시 졸업(코스튬 착용) 연출.
+    public void GainAffinity(int amount)
+    {
+        if (IsMaxed) return;
+        int before = affinity;
+        AddAffinity(amount);
+        if (before < 100 && affinity >= 100) Graduate();
+    }
+
     // 테스트용: 친밀도를 즉시 MAX로 (J키). 코스튬/도감 업그레이드/선물 차단 확인용.
     public void DebugSetMaxAffinity()
     {

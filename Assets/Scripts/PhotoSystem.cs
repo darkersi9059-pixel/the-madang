@@ -184,6 +184,9 @@ public class PhotoSystem : MonoBehaviour
         // 처음 사진 찍으면 도감 등록 → 실루엣 해제, 이름 정상 표시
         DexManager.Instance?.Register(animal.animalName, animal.animalType);
 
+        // 사진을 찍을 때마다 그 피사체의 친밀도 +1 (MAX 도달 시 코스튬 착용)
+        animal.GainAffinity(1);
+
         animal.MarkPhotographed();
         ToggleCameraMode();
     }

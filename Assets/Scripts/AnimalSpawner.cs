@@ -13,8 +13,8 @@ public class AnimalSpawner : MonoBehaviour
     public int maxAnimalsAtOnce = 10;
 
     [Header("Stay Time (초)")]
-    public float minStay = 60f;    // 1분
-    public float maxStay = 600f;   // 10분
+    public float minStay = 45f;    // 테스트: 약 1분 체류
+    public float maxStay = 75f;    // 테스트: 약 1분 체류
 
     [Header("Spawn Area (마당 범위, 세로 화면)")]
     public Vector2 areaMin = new Vector2(-2.5f, -3.2f);
@@ -406,6 +406,8 @@ public class AnimalSpawner : MonoBehaviour
     {
         if (animalPrefabs.Length == 0) return null;
         bool night = DayNightManager.Instance == null || DayNightManager.Instance.IsNight();
+        // 레벨별 등장 그룹: 1~5=고양이·강아지, 6~=괴수 추가, 11~=로봇 추가 (유령은 레벨무관·밤한정)
+        int level = GameManager.Instance != null ? GameManager.Instance.Level : 1;
 
         // 룰1: 같은 피사체(이름) 동시 출현 금지 — 이미 마당에 있는 이름은 후보에서 제외
         var present = new HashSet<string>();
@@ -424,6 +426,9 @@ public class AnimalSpawner : MonoBehaviour
 
             // 유령은 밤에만 등장, 그리고 희귀하게
             if (animal.animalType == AnimalType.Ghost && !night) { weights[i] = 0f; continue; }
+            // 레벨 잠금: 괴수는 Lv6+, 로봇은 Lv11+ 부터 등장
+            if (animal.animalType == AnimalType.Kaiju && level < 6) { weights[i] = 0f; continue; }
+            if (animal.animalType == AnimalType.Robot && level < 11) { weights[i] = 0f; continue; }
 
             int affinity = PlayerPrefs.GetInt($"Affinity_{animal.animalName}", 0);
             float w = 10f + affinity; // 친밀도 0 → 10, 100 → 110

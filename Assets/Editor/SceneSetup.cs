@@ -10,6 +10,12 @@ public class SceneSetup : EditorWindow
     [MenuItem("TheMadang/Setup Scene")]
     public static void SetupScene()
     {
+        if (EditorApplication.isPlaying)
+        {
+            EditorUtility.DisplayDialog("Play 모드 종료 필요",
+                "Setup Scene은 재생(▶) 중에는 실행할 수 없어요.\n먼저 ▶ 버튼을 눌러 Play를 정지한 뒤 다시 실행해 주세요.", "확인");
+            return;
+        }
         koreanFont = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Fonts/Pretendard SDF.asset");
         if (koreanFont == null) // 폴백
             koreanFont = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Fonts/malgun SDF.asset");

@@ -107,10 +107,16 @@ public class PhotoAlbumUI : MonoBehaviour
         var bg = card.AddComponent<Image>();
         bg.color = RarityColor((PhotoRarity)photo.rarity);
 
+        // 카드를 누르면 사진 확대 보기
+        var cardBtn = card.AddComponent<Button>();
+        cardBtn.transition = Selectable.Transition.None;
+        cardBtn.onClick.AddListener(() => ShowEnlarged(photo));
+
         // 사진 이미지 (파일에서 로드)
         var imgObj = new GameObject("Photo");
         imgObj.transform.SetParent(card.transform, false);
         var img = imgObj.AddComponent<Image>();
+        img.raycastTarget = false; // 클릭은 카드 버튼이 받도록
         var sprite = PhotoStorage.LoadSprite(photo.fileName);
         if (sprite != null)
         {
@@ -131,12 +137,102 @@ public class PhotoAlbumUI : MonoBehaviour
         tmp.fontSize = 20;
         tmp.alignment = TextAlignmentOptions.Center;
         tmp.color = Color.black;
+        tmp.raycastTarget = false; // 클릭은 카드 버튼이 받도록
         if (font != null) tmp.font = font;
         var labelRect = labelObj.GetComponent<RectTransform>();
         labelRect.anchorMin = new Vector2(0, 0);
         labelRect.anchorMax = new Vector2(1, 0.3f);
         labelRect.offsetMin = Vector2.zero;
         labelRect.offsetMax = Vector2.zero;
+    }
+
+    // ---------- 사진 확대 보기 (카드를 누르면 전체화면으로 크게) ----------
+    GameObject enlargedView;
+
+    void ShowEnlarged(PhotoMeta photo)
+    {
+        CloseEnlarged();
+        var canvas = albumPanel != null ? albumPanel.GetComponentInParent<Canvas>() : null;
+        Transform root = canvas != null ? canvas.transform
+                       : (albumPanel != null ? albumPanel.transform : transform);
+
+        // 어두운 전체화면 배경 (탭하면 닫힘)
+        enlargedView = new GameObject("EnlargedPhoto");
+        enlargedView.transform.SetParent(root, false);
+        var bgRect = enlargedView.AddComponent<RectTransform>();
+        bgRect.anchorMin = Vector2.zero; bgRect.anchorMax = Vector2.one;
+        bgRect.offsetMin = Vector2.zero; bgRect.offsetMax = Vector2.zero;
+        var bg = enlargedView.AddComponent<Image>();
+        bg.color = new Color(0f, 0f, 0f, 0.88f);
+        var closeBtn = enlargedView.AddComponent<Button>();
+        closeBtn.transition = Selectable.Transition.None;
+        closeBtn.onClick.AddListener(CloseEnlarged);
+        enlargedView.transform.SetAsLastSibling(); // 최상단
+
+        // 흰 폴라로이드 프레임
+        var frame = new GameObject("Frame");
+        frame.transform.SetParent(enlargedView.transform, false);
+        var frameImg = frame.AddComponent<Image>();
+        frameImg.color = Color.white;
+        frameImg.raycastTarget = false;
+        var frameRect = frame.GetComponent<RectTransform>();
+        frameRect.anchorMin = frameRect.anchorMax = new Vector2(0.5f, 0.5f);
+        frameRect.pivot = new Vector2(0.5f, 0.5f);
+        frameRect.sizeDelta = new Vector2(880, 980);
+        frameRect.anchoredPosition = new Vector2(0, 40);
+
+        // 큰 사진
+        var photoObj = new GameObject("BigPhoto");
+        photoObj.transform.SetParent(frame.transform, false);
+        var pimg = photoObj.AddComponent<Image>();
+        var sprite = PhotoStorage.LoadSprite(photo.fileName);
+        if (sprite != null) { pimg.sprite = sprite; pimg.preserveAspect = true; }
+        pimg.raycastTarget = false;
+        var pr = photoObj.GetComponent<RectTransform>();
+        pr.anchorMin = new Vector2(0.05f, 0.14f);
+        pr.anchorMax = new Vector2(0.95f, 0.97f);
+        pr.offsetMin = Vector2.zero; pr.offsetMax = Vector2.zero;
+
+        // 이름 + 점수
+        var infoObj = new GameObject("Info");
+        infoObj.transform.SetParent(frame.transform, false);
+        var itmp = infoObj.AddComponent<TextMeshProUGUI>();
+        itmp.text = $"{photo.animalName}   {photo.score}G";
+        itmp.fontSize = 40;
+        itmp.alignment = TextAlignmentOptions.Center;
+        itmp.color = Color.black;
+        itmp.raycastTarget = false;
+        if (font != null) itmp.font = font;
+        var ir = infoObj.GetComponent<RectTransform>();
+        ir.anchorMin = new Vector2(0, 0); ir.anchorMax = new Vector2(1, 0.14f);
+        ir.offsetMin = Vector2.zero; ir.offsetMax = Vector2.zero;
+
+        // 닫기 안내
+        var hintObj = new GameObject("CloseHint");
+        hintObj.transform.SetParent(enlargedView.transform, false);
+        var htmp = hintObj.AddComponent<TextMeshProUGUI>();
+        htmp.text = "탭하면 닫기";
+        htmp.fontSize = 30;
+        htmp.alignment = TextAlignmentOptions.Center;
+        htmp.color = new Color(1f, 1f, 1f, 0.8f);
+        htmp.raycastTarget = false;
+        if (font != null) htmp.font = font;
+        var hr = hintObj.GetComponent<RectTransform>();
+        hr.anchorMin = hr.anchorMax = new Vector2(0.5f, 0);
+        hr.pivot = new Vector2(0.5f, 0);
+        hr.anchoredPosition = new Vector2(0, 60);
+        hr.sizeDelta = new Vector2(400, 50);
+
+        SoundManager.Play(SoundManager.Sfx.Open);
+        UITween.Instance?.PopOpen(frame); // 프레임만 통통 등장(배경은 고정)
+    }
+
+    void CloseEnlarged()
+    {
+        if (enlargedView == null) return;
+        SoundManager.Play(SoundManager.Sfx.Close);
+        Destroy(enlargedView);
+        enlargedView = null;
     }
 
     Color RarityColor(PhotoRarity r) => r switch
