@@ -30,18 +30,22 @@ public class PhotoSystem : MonoBehaviour
     void Update()
     {
         var kb = UnityEngine.InputSystem.Keyboard.current;
-        var mouse = UnityEngine.InputSystem.Mouse.current;
 
         if (kb != null && kb.cKey.wasPressedThisFrame) ToggleCameraMode();
-        if (mouse == null) return;
+        if (!IsCameraMode) return;
 
-        if (IsCameraMode)
-        {
-            if (viewfinderFrame != null)
-                viewfinderFrame.position = mouse.position.ReadValue();
-            if (mouse.leftButton.wasPressedThisFrame) TryTakePhoto();
-            if (kb != null && kb.escapeKey.wasPressedThisFrame) ToggleCameraMode();
-        }
+        if (kb != null && kb.escapeKey.wasPressedThisFrame) { ToggleCameraMode(); return; }
+
+        // 마우스와 터치를 모두 지원하는 통합 포인터 (모바일 웹 대응)
+        var pointer = UnityEngine.InputSystem.Pointer.current;
+        if (pointer == null) return;
+
+        Vector2 pos = pointer.position.ReadValue();
+        if (viewfinderFrame != null)
+            viewfinderFrame.position = pos;
+
+        // 데스크톱: hover로 조준 + 클릭 촬영 / 모바일: 손가락으로 프레임 끌어 조준 후 떼면 촬영
+        if (pointer.press.wasReleasedThisFrame) TryTakePhoto(pos);
     }
 
     public void ToggleCameraMode()
@@ -50,9 +54,8 @@ public class PhotoSystem : MonoBehaviour
         cameraViewfinderUI?.SetActive(IsCameraMode);
     }
 
-    void TryTakePhoto()
+    void TryTakePhoto(Vector2 frameCenter)
     {
-        Vector2 frameCenter = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
         float frameSize = viewfinderFrame != null ? viewfinderFrame.sizeDelta.x : 280f;
 
         // 프레임 안에서 가장 잘 담긴 동물 찾기
@@ -129,7 +132,8 @@ public class PhotoSystem : MonoBehaviour
         else
         {
             w = h = 280;
-            var c = UnityEngine.InputSystem.Mouse.current.position.ReadValue();
+            var ptr = UnityEngine.InputSystem.Pointer.current;
+            var c = ptr != null ? ptr.position.ReadValue() : new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
             x = Mathf.RoundToInt(c.x - 140); y = Mathf.RoundToInt(c.y - 140);
         }
         w = Mathf.Clamp(w, 1, Screen.width);
